@@ -912,6 +912,8 @@ func mapToXmlIndent(doIndent bool, s *string, key string, value interface{}, pp 
 	case nil:
 		// terminate the tag
 		*s += "<" + key
+		isSimple = true
+		endTag = true
 		break
 	default: // handle anything - even goofy stuff
 		elen = 0
